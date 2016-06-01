@@ -22,10 +22,10 @@ def getUppercaseAlphabet():
 def getReorderedLowercaseAlphabet(key):
     alpha = string.ascii_lowercase
     list = []
-    count = 26
-    while count > 0:
+    count = 0
+    while count < 26:
     	list.append(alpha[(key + count) % 26])
-    	count = count - 1
+    	count = count + 1
     return list
 
 
@@ -46,6 +46,32 @@ try:
         print("Test 1 fails. getLowercaseAlphabet() needs more work.")
 except:
     print("Test 1 fails. getLowercaseAlphabet() needs more work.")
+
+
+
+high_alpha = getUppercaseAlphabet()
+
+try:
+    if(high_alpha[7] == 'H' and high_alpha[11] == 'L'):
+        print("Test 2 passes! getUppercaseAlphabet() is correct.")
+    else:
+        print("Test 2 fails. getUppercaseAlphabet() needs more work.")
+except:
+    print("Test 2 fails. getUppercaseAlphabet() needs more work.")
+
+
+
+
+reorderAlphabet = getReorderedLowercaseAlphabet(5)
+
+try:
+    if(reorderAlphabet[5]) == 'k':
+        print("Test 3 passes! getReorderedLowercaseAlphabet() is correct.")
+    else:
+        print("Test 3 fails. getReorderedLowercaseAlphabet() needs more work.")
+except: 
+    print("Test 3 fails. getReorderedLowercaseAlphabet() needs more work.")
+
 
 
 
